@@ -1789,7 +1789,7 @@ class PsiturkNetworkShell(PsiturkShell):
         revproxy_url = False
         if self.config.has_option('Server Parameters','adserver_revproxy_host'):
             if self.config.has_option( 'Server Parameters', 'adserver_revproxy_port'):
-                port = self.config.get( 'Server Parameters', 'adserver_revproxy_port')
+                port = int(self.config.get( 'Server Parameters', 'adserver_revproxy_port'))
             else:
                 port = 80
             revproxy_url = "http://" + self.config.get('Server Parameters', 'adserver_revproxy_host')\
